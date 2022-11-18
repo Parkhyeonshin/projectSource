@@ -1,0 +1,23 @@
+/* header (헤더) */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+
+    height: 60px;
+    font-family: "MuseoModerno";
+    background-color: #fff;
+    border-bottom: 1px solid #dcdcdc;
+}
+#header > .header__inner {
+}
+#header > .header__inner > h1 {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #f53c36;
+}
