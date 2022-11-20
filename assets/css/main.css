@@ -5,6 +5,8 @@
 #main > .main__inner {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
+    min-height: 877px;
 }
 
 /* contents (콘텐츠) */
@@ -13,9 +15,22 @@
     background-color: #f1f1f1;
     background: url(../img/bg_normal.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: 50% 50%;
     position: relative;
+    z-index: 1;
+}
+#contents::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/Sun.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40%;
+    height: 40%;
+    z-index: -1;
 }
 #contents::before {
     content: "";
@@ -24,8 +39,9 @@
     left: 0;
     width: 100%;
     height: calc(100% - 60px);
-    background-image: url("data:image/svg+xml,%0A%3Csvg width='1420' height='466' viewBox='0 0 1420 466' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M715.76 106.282C355.927 -36.006 100.844 -5.29676 0 27.8439V466H1420V27.8438C1335.18 113.277 1075.59 248.571 715.76 106.282Z' fill='white' fill-opacity='0.5'/%3E%3Cpath d='M704.24 106.282C1064.07 -36.006 1319.16 -5.29676 1420 27.8439V466H0V27.8439C84.8159 113.277 344.406 248.571 704.24 106.282Z' fill='%23CDCDCD' fill-opacity='0.5'/%3E%3C/svg%3E%0A");
-    background-size: contain;
+    /* background-image: url("data:image/svg+xml,%0A%3Csvg width='1420' height='466' viewBox='0 0 1420 466' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M715.76 106.282C355.927 -36.006 100.844 -5.29676 0 27.8439V466H1420V27.8438C1335.18 113.277 1075.59 248.571 715.76 106.282Z' fill='white' fill-opacity='0.5'/%3E%3Cpath d='M704.24 106.282C1064.07 -36.006 1319.16 -5.29676 1420 27.8439V466H0V27.8439C84.8159 113.277 344.406 248.571 704.24 106.282Z' fill='%23CDCDCD' fill-opacity='0.5'/%3E%3C/svg%3E%0A"); */
+    background-image: url(../img/bg_bottom.png);
+    background-size: 100% 47%;
     background-repeat: no-repeat;
     background-position: center bottom;
 }
@@ -74,19 +90,32 @@
     border-radius: 30px;
     padding: 30px;
     width: 100%;
+    margin-bottom: 30px;
 }
 #contents > .contents__inner > .contents__descWrap > .time_weather {
-    margin-top: 60px;
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    border-bottom: 3px solid #dcdcdc;
 }
-#contents > .contents__inner > .contents__descWrap > .time_weather {
-    width: 16%;
-    height: 100px;
-    background: #000;
+#contents > .contents__inner > .contents__descWrap > .time_weather > div {
+    width: 18%;
+    margin-bottom: 50px;
+}
+#contents > .contents__inner > .contents__descWrap > .time_weather div > img {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
 }
 
+#contents > .contents__inner > .contents__descWrap > .time__desc {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-family: "LeeSeoyun";
+    line-height: 1.2;
+    font-size: 20px;
+}
 /* aside (사이드) */
 #aside {
     font-family: "SUIT";
@@ -144,6 +173,7 @@
     border-radius: 50px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
 }
+
 .mainWeather__inner > .main_cityName {
     position: relative;
     top: 20px;
@@ -176,7 +206,7 @@
     z-index: 1;
 }
 .mainWeather__inner > .main_weatherImg {
-    position: absolute;
+    position: absolute; 
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
@@ -234,7 +264,18 @@
     color: #777777;
     font-size: 12px;
 }
-
+.mainWeatherInfo__inner > article {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.mainWeatherInfo__inner > article > p,
+.mainWeatherInfo__inner > article > h5 {
+    width: 100%;
+}
+.mainWeatherInfo__inner > article > p {
+    display: block;
+}
 /* aside > subWeather__box */
 .subWeather__box {
 }

@@ -9,7 +9,8 @@
     background-position: center;
     background-size: cover;
     width: 300px;
-    height: 300px;
+    width: 27%;
+    /* height: 300px; */
 }
 
 .swiper-slide img {
@@ -17,7 +18,8 @@
     width: 100%;
     transform: scale(0.69);
     opacity: 0.5;
-    transition: all 0.3s ease-out;
+    transition: all 0.6s ease-out;
+    min-width: 120px;
 }
 .swiper-slide-active img {
     transform: scale(1);
@@ -230,7 +232,8 @@
     font-family: "LeeSeoyun";
     opacity: 0.3;
     transform: scale(0.5);
-    transition: all 0.75s ease;
+    transition: all 0.5 s ease;
+    min-width: 120px;
 }
 .swiper-slide-active .swiper-name {
     opacity: 1;
